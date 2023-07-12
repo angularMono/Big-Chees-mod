@@ -1,6 +1,7 @@
 package net.jay.bigcheese.item;
 
 import net.jay.bigcheese.BigCheese;
+import net.jay.bigcheese.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -22,6 +23,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.CHEESE.get());
                         pOutput.accept(ModItems.EYE_OF_CHEESE.get());
                         pOutput.accept(Items.END_STONE);
+                        pOutput.accept(ModBlocks.CHEESE_BLOCK.get());
                     })
                     .build());
 
