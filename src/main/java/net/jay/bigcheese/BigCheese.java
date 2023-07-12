@@ -1,6 +1,8 @@
 package net.jay.bigcheese;
 
 import com.mojang.logging.LogUtils;
+import net.jay.bigcheese.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -16,7 +18,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-//urfeujrefon
+
 @Mod(BigCheese.MOD_ID)
 public class BigCheese
 {
@@ -27,6 +29,8 @@ public class BigCheese
     public BigCheese()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -44,7 +48,10 @@ public class BigCheese
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+            event.accept(ModItems.CHEESE);
+            event.accept(ModItems.EYE_OF_CHEESE);
+        }
     }
 
     @SubscribeEvent
