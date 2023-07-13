@@ -24,6 +24,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.EYE_OF_CHEESE.get());
                         pOutput.accept(Items.END_STONE);
                         pOutput.accept(ModBlocks.CHEESE_BLOCK.get());
+                        pOutput.accept(ModBlocks.CHEESE_BRICKS.get());
                     })
                     .build());
 

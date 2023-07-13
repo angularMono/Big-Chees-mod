@@ -21,8 +21,13 @@ public class ModBlocks {
 
 
 
+
     public static final RegistryObject<Block> CHEESE_BLOCK = registerBlock("cheese_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.WET_SPONGE)));
+
+
+    public static final RegistryObject<Block> CHEESE_BRICKS = registerBlock("cheese_bricks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
 
 
 
